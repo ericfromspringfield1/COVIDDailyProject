@@ -1,0 +1,158 @@
+#written { 
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
+#CovidHeadline {
+    background-color: saddlebrown;
+    color:  white;
+    padding-left: 10px;
+}
+
+#statement {
+    color: black;
+    font-size: 1.2em;
+    }
+
+#writtenP1 {
+color: black;
+font-size: 1.2em;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px;
+}
+
+th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Baloo Paaji 2', cursive;
+  }
+
+#date {
+    background-color: rgb(36, 55, 160);
+    color: white;
+ }
+
+#state {
+   background-color: cadetblue;
+   color: white;
+}
+
+#positive {
+    background-color: crimson;
+    color: white;
+}
+
+#negative {
+    background-color: slategray;
+    color: white;
+}
+
+#totalTestResults {
+    background-color: rebeccapurple;
+    color: white;
+}
+
+#death {
+    background-color: black;
+    color: white;
+}
+
+#percentPositive {
+    background-color: coral;
+    color: white;
+}
+
+#percentDeathOfPositive {
+    background-color: green;
+    color: white;
+}
+
+#newCases {
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+#newTests {
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+#dailyPercentPositive {
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+#newDeaths {
+    background-color: rgb(83, 82, 82);
+    color: white;
+}
+
+#dateData {
+    background-color: rgb(36, 55, 160);
+    color: white;
+}
+
+#stateData {
+    background-color: cadetblue;
+    color: white; 
+}
+
+#positiveData {
+    background-color: crimson;
+    color: white;
+}
+
+#negativeData {
+    background-color: slategray;
+    color: white;
+}
+
+#totalTestResultsData {
+    background-color: rebeccapurple;
+    color: white;
+}
+
+#deathData {
+    background-color: black;
+    color: white;
+}
+
+#percentPositiveRow {
+    background-color: coral;
+    color: white;
+}
+
+#percentDeathOfPositiveData {
+    background-color: green;
+    color: white;
+}
+
+#newCasesData {
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+#newTestsData {
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+#dailyPercentPositiveData {
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+#newDeathsData {
+    background-color: rgb(83, 82, 82);
+    color: white;
+}
+
+alert {
+   background-color: black; 
+}
