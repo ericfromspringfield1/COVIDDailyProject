@@ -2,8 +2,8 @@
 @media all  and (max-width: 600px) {
     #CovidHeadline {  
         width: 225%;
-        background-color: #ba0c2f;
-        color:  white;
+        background-color:  #ff8200;
+      color:  white;
         
     }
     #statement {
@@ -70,7 +70,7 @@
   
   
   #CovidHeadline {
-      background-color:  #ba0c2f;
+      background-color:  #ff8200;
       color:  white;
   }
   
