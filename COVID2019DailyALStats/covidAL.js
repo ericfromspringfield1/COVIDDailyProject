@@ -323,16 +323,19 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
     
 
     
-    let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
-    console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
-
-    if (maxDailyPercentPositiveToday > maxDailyPercentPositiveYesterday) {
-        let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
-        dailyPercentPositiveDifferenceElement.innerHTML = `Today's Positive Rate decreased by ${dailyPercentPositiveDifference.toFixed(2)}%.`
-        }
+        let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
+        let dailyPercentPositiveDifference2 = (maxDailyPercentPositiveYesterday - maxDailyPercentPositiveToday)
+        console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
     
+        if (dailyPercentPositiveDifference < 0) {
         let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
+        dailyPercentPositiveDifferenceElement.innerHTML = `Today's Positive Rate decreased by ${dailyPercentPositiveDifference2.toFixed(2)}%.`
+    }
+        
+        if (dailyPercentPositiveDifference > 0) {
+        dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
         dailyPercentPositiveDifferenceElement.innerHTML = `Positive Rate increased by ${dailyPercentPositiveDifference.toFixed(2)}% over last 24 hours.`
+        }
     
         let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
         compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
