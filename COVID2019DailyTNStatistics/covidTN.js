@@ -370,7 +370,11 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
                 stateObj.negative = 0
             }
 
-            
+            /* CURRENTLY HOSPITALIZED */
+    const hospitalizedCurrently = data[0].hospitalizedCurrently
+    let currentlyHospitalizedElement = document.getElementById('currentlyHospitalized')
+    currentlyHospitalizedElement.innerHTML = `CURRENTLY HOSPITALIZED - ${hospitalizedCurrently}. `
+    
              
             
             return `
