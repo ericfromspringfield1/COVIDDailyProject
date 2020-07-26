@@ -142,6 +142,17 @@
       font-family: 'Baloo Paaji 2', cursive;
   }
   
+  #currentlyHospitalized {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
   #section2 {
       box-shadow: 1px 1px 5px #031938;
       border-radius: 3%;
