@@ -277,7 +277,7 @@ let arrayOfNewTests = []
 
         
         /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE LAST 15 DAYS*/
-    const totalNewTests = arrayOfNewTests.reduce(function(a, b) {
+    const totalNewTests = arrayOfNewTests.reduce(function(a, b) {   
         return a + b;
     }, 0);
     console.log(totalNewTests);
