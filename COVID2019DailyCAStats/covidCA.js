@@ -339,6 +339,11 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
         let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
         compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
     
+                  /* CURRENTLY HOSPITALIZED */
+                  const hospitalizedCurrently = data[0].hospitalizedCurrently
+                  let currentlyHospitalizedElement = document.getElementById('currentlyHospitalized')
+                  currentlyHospitalizedElement.innerHTML = `CURRENTLY HOSPITALIZED - ${hospitalizedCurrently}. `
+      
 /*****************************************************************************************************************************/
    
        
