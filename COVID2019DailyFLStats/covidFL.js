@@ -289,7 +289,7 @@ let arrayOfNewTests = []
 
 const percentPositiveOver15Days = (totalDailyPositiveIncrease / totalNewTests * 100).toFixed(2)
 let percentPositiveOver15DaysElement = document.getElementById('percentPositiveOver15Days')
-percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 days) - ${percentPositiveOver15Days}%. `
+percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 days) - ${percentPositiveOver15Days}%.`
 
     //*************RETURN rolling average over 15 days***************//
     let averageNewTestsToday = data[0].totalTestResultsIncrease
@@ -325,19 +325,28 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
 
     
         let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
+        let dailyPercentPositiveDifference2 = (maxDailyPercentPositiveYesterday - maxDailyPercentPositiveToday)
         console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
     
-        if (maxDailyPercentPositiveToday > maxDailyPercentPositiveYesterday) {
+        if (dailyPercentPositiveDifference < 0) {
         let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
-        dailyPercentPositiveDifferenceElement.innerHTML = `Today's Positive Rate decreased by ${dailyPercentPositiveDifference.toFixed(2)}%.`
-        }
-        if (maxDailyPercentPositiveToday < maxDailyPercentPositiveYesterday)
-         dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
+        dailyPercentPositiveDifferenceElement.innerHTML = `Today's Positive Rate decreased by ${dailyPercentPositiveDifference2.toFixed(2)}%.`
+    }
+        
+        if (dailyPercentPositiveDifference > 0) {
+        dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
         dailyPercentPositiveDifferenceElement.innerHTML = `Positive Rate increased by ${dailyPercentPositiveDifference.toFixed(2)}% over last 24 hours.`
+        }
     
         let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
         compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
     
+
+                            /* CURRENTLY HOSPITALIZED */
+            const hospitalizedCurrently = data[0].hospitalizedCurrently
+            let currentlyHospitalizedElement = document.getElementById('currentlyHospitalized')
+            currentlyHospitalizedElement.innerHTML = `CURRENTLY HOSPITALIZED - ${hospitalizedCurrently}. `
+
 /*****************************************************************************************************************************/
    
        
@@ -402,3 +411,4 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
             
         })
     })
+    
