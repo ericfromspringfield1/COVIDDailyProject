@@ -231,12 +231,36 @@ let arrayOfDailyPercentPositive = []
 
         arrayOfDailyPercentPositive.push(maxDailyPercentPositiveToday, maxDailyPercentPositiveYesterday, maxDailyPercentPositive2Days, maxDailyPercentPositive3Days, maxDailyPercentPositive4Days, maxDailyPercentPositive5Days, maxDailyPercentPositive6Days, maxDailyPercentPositive7Days, maxDailyPercentPositive8Days, maxDailyPercentPositive9Days, maxDailyPercentPositive10Days, maxDailyPercentPositive11Days, maxDailyPercentPositive12Days, maxDailyPercentPositive13Days, maxDailyPercentPositive14Days)
     
+    
+        //If array contains a zero (0), it will return as NaN, creating a result of NaN when considering those items in the array. 
+        //For example, Max Daily Positive Percent would return NaN if any Daily Percent Positive is zero(0). 
+        //The first function removes the NaN once and removes all instances of the NaN in the array, allowing only numbers to be considered
+        function removeItemOnce(arrayOfDailyPercentPositive, value) {
+            var index = arrayOfDailyPercentPositive.indexOf(value);
+            if (index > -1) {
+              arrayOfDailyPercentPositive.splice(index, 1);
+            }
+            return arrayOfDailyPercentPositive;
+          }
+        function removeItemAll(arrayOfDailyPercentPositive, value) {
+            var i = 0;
+            while (i < arrayOfDailyPercentPositive.length) {
+              if (arrayOfDailyPercentPositive[i] === value) {
+                arrayOfDailyPercentPositive.splice(i, 1);
+              } else {
+                ++i;
+              }
+            }
+            return arrayOfDailyPercentPositive;
+          }
+        
+        console.log(removeItemOnce(arrayOfDailyPercentPositive, "NaN"))
+        console.log(removeItemAll(arrayOfDailyPercentPositive, "NaN"))
+
         const maxDailyPercentPositive = arrayOfDailyPercentPositive.reduce(function(a, b) {
-            return Math.max(a, b);
-        });
-        console.log(maxDailyPercentPositive);
-
-
+            return Math.max(a, b);    
+       });
+       console.log(maxDailyPercentPositive);
     let maxDailyPercentPositiveElement = document.getElementById('maxDailyPercentPositive')
     maxDailyPercentPositiveElement.innerHTML = `MAX DAILY POSITIVE PERCENT (last 15 days) - ${maxDailyPercentPositive}%. `
 
