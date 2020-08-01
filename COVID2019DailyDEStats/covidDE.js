@@ -57,6 +57,21 @@ if  (todayPositive > 10) {
     },
 },
 });
+
+} else if 
+(todayPositive < 10 && (differencePositiveComp > 0)) {
+swal(`Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}p, and...`,
+`${data[0].state} is ${differencePositiveComp.toFixed(2)}% below the overall positive percentage average of ${compPositive}%.`, 'success',
+{ 
+buttons: {
+mask: "I'll Wear A Mask",
+noMask: {
+    text: "I Don't Care For Others",
+    value: "No Mask",
+},
+},
+});
+
     }
 else if 
 (todayPositive < 10) {

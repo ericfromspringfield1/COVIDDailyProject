@@ -28,6 +28,7 @@ function init(data) {
 let compPositive = ((data[0].positive / data[0].totalTestResults * 100).toFixed(2))
 let todayPositive = (data[0].positiveIncrease / data[0].totalTestResultsIncrease * 100).toFixed(2)
 let differencePositive = todayPositive - compPositive
+let differencePositiveComp = compPositive - todayPositive
 let compPositiveYesterday = ((data[1].positive / data[1].totalTestResults * 100).toFixed(2))
 let yesterdayPositive = (data[1].positiveIncrease / data[1].totalTestResultsIncrease * 100).toFixed(2)
 let differencePositiveYesterday = todayPositive - yesterdayPositive
@@ -45,8 +46,9 @@ if  (todayPositive > 10) {
         },
     },
     });
+    
 } else if 
-    (todayPositive < 10 && (todayPositive > compPositive)) {
+    (todayPositive < 10 && (todayPositive > compPositive) && (differencePositive > 0)) {
     swal(`Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}p, but...`,
     `${data[0].state} remains ${differencePositive.toFixed(2)}% above the overall positive percentage average of ${compPositive}%.`, 'warning',
    { 
@@ -58,10 +60,24 @@ if  (todayPositive > 10) {
     },
 },
 });
-    }
-else if 
+
+} else if 
+(todayPositive < 10 && (differencePositiveComp > 0)) {
+swal(`Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}p, and...`,
+`${data[0].state} is ${differencePositiveComp.toFixed(2)}% below the overall positive percentage average of ${compPositive}%.`, 'success',
+{ 
+buttons: {
+mask: "I'll Wear A Mask",
+noMask: {
+    text: "I Don't Care For Others",
+    value: "No Mask",
+},
+},
+});
+
+} else if 
 (todayPositive < 10) {
-    swal(`KEEP UP THE GREAT WORK IN THE ${data[0].state}!`, `Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}pm. ${todayPositive}% to be exact. In other words, keep doing you!`, 'warning',
+    swal(`KEEP UP THE GREAT WORK IN THE ${data[0].state}!`, `Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}pm. ${todayPositive}% to be exact. In other words, keep doing you!`, 'success',
 { 
     buttons: {
     mask: "I'll Wear A Mask",
