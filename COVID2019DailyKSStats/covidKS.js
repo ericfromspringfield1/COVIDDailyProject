@@ -28,6 +28,7 @@ function init(data) {
 let compPositive = ((data[0].positive / data[0].totalTestResults * 100).toFixed(2))
 let todayPositive = (data[0].positiveIncrease / data[0].totalTestResultsIncrease * 100).toFixed(2)
 let differencePositive = todayPositive - compPositive
+let differencePositiveComp = compPositive - todayPositive
 let compPositiveYesterday = ((data[1].positive / data[1].totalTestResults * 100).toFixed(2))
 let yesterdayPositive = (data[1].positiveIncrease / data[1].totalTestResultsIncrease * 100).toFixed(2)
 let differencePositiveYesterday = todayPositive - yesterdayPositive

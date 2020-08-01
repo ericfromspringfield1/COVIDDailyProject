@@ -26,6 +26,7 @@ console.log(data)
 function init(data) {
 let compPositive = ((data[0].positive / data[0].totalTestResults * 100).toFixed(2))
 let todayPositive = (data[0].positiveIncrease / data[0].totalTestResultsIncrease * 100).toFixed(2)
+let differencePositiveComp = compPositive - todayPositive
 let differencePositive = todayPositive - compPositive
 let compPositiveYesterday = ((data[1].positive / data[1].totalTestResults * 100).toFixed(2))
 let yesterdayPositive = (data[1].positiveIncrease / data[1].totalTestResultsIncrease * 100).toFixed(2)
