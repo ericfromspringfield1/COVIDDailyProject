@@ -78,7 +78,7 @@ noMask: {
 
 } else if 
 (todayPositive < 10) {
-    swal(`KEEP UP THE GREAT WORK IN THE ${data[0].state}!`, `Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}pm. ${todayPositive}% to be exact. In other words, keep doing you!`, 'warning',
+    swal(`KEEP UP THE GREAT WORK IN THE ${data[0].state}!`, `Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}pm. ${todayPositive}% to be exact. In other words, keep doing you!`, 'success',
 { 
     buttons: {
     mask: "I'll Wear A Mask",
