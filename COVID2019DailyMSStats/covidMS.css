@@ -2,7 +2,7 @@
 @media all  and (max-width: 600px) {
     #CovidHeadline {  
         width: 225%;
-        background-color:  #c7ca0c;
+        background-color:  #006ba6;
       color:  white;
         
     }
@@ -59,9 +59,8 @@
       background-color: red;
       border: none;
       
+  
   }
-
-  .swal-icon--s
   
   /*************************************/
   #written { 
@@ -69,8 +68,9 @@
   }
   
   
+  
   #CovidHeadline {
-      background-color:  #c7ca0c;
+      background-color:  #006ba6;
       color:  white;
   }
   
