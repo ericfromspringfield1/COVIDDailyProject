@@ -5,7 +5,7 @@ const dataURL = `https://covidtracking.com/api/v1/states/ga/daily.json`;
 
 
 fetch(dataURL)
-.then(function(resp) {
+.then(function(resp) { 
     return resp.json();
 })
 .then(data =>  {
