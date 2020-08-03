@@ -376,8 +376,20 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
         dailyPercentPositiveDifferenceElement.innerHTML = `Positive Rate increased by ${dailyPercentPositiveDifference.toFixed(2)}% over last 24 hours.`
         }
     
-        let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
-        compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
+    //If MaxDailyPercentPositiveToday is 0 and New Tests is 0,  Do not show a Difference. Just state there were no new tests today. 
+    if (maxDailyPercentPositiveToday === "NaN") {
+        maxDailyPercentPositiveToday = 0
+    }
+    
+    if (maxDailyPercentPositiveToday === 0 && averageNewTestsToday === 0) {
+        let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
+        dailyPercentPositiveDifferenceElement.innerHTML = `There were no new tests today.`
+    }
+    console.log(maxDailyPercentPositiveToday)
+      
+      let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
+      compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
+    
     
 
                     /* CURRENTLY HOSPITALIZED */

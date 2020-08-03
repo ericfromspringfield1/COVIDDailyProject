@@ -346,9 +346,12 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
     let averageNewTests12Days = data[12].totalTestResultsIncrease
     let averageNewTests13Days = data[13].totalTestResultsIncrease
     let averageNewTests14Days = data[14].totalTestResultsIncrease
+
     let arrayAverageOftotalTestResultsIncrease = []
     
     arrayAverageOftotalTestResultsIncrease.push(averageNewTestsToday, averageNewTestsYesterday, averageNewTests2Days, averageNewTests3Days,averageNewTests4Days, averageNewTests5Days, averageNewTests6Days, averageNewTests7Days, averageNewTests8Days, averageNewTests9Days, averageNewTests10Days, averageNewTests11Days, averageNewTests12Days, averageNewTests13Days, averageNewTests14Days)
+    
+   
     
     
     var total = 0;
@@ -356,30 +359,44 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
         total += arrayAverageOftotalTestResultsIncrease[i];
     }
     var averageNewTests = total / arrayAverageOftotalTestResultsIncrease.length;
-        console.log(`Average New Tests Per Day is ${averageNewTests}`);
+    console.log(`Average New Tests Per Day is ${averageNewTests}`);
     
-        let averageNewTestsElement = document.getElementById('averageNewTests')
-        averageNewTestsElement.innerHTML = `NEW TESTS PER DAY (15-day Avg) - ${averageNewTests.toFixed(0)}`
+    let averageNewTestsElement = document.getElementById('averageNewTests')
+    averageNewTestsElement.innerHTML = `NEW TESTS PER DAY (15-day Avg) - ${averageNewTests.toFixed(0)}`
     
-
     
-        let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
-        let dailyPercentPositiveDifference2 = (maxDailyPercentPositiveYesterday - maxDailyPercentPositiveToday)
-        console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
     
-        if (dailyPercentPositiveDifference < 0) {
+    let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
+    let dailyPercentPositiveDifference2 = (maxDailyPercentPositiveYesterday - maxDailyPercentPositiveToday)
+    console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
+    
+    if (dailyPercentPositiveDifference < 0) {
         let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
         dailyPercentPositiveDifferenceElement.innerHTML = `Today's Positive Rate decreased by ${dailyPercentPositiveDifference2.toFixed(2)}%.`
     }
-        
-        if (dailyPercentPositiveDifference > 0) {
+    
+    
+    if (dailyPercentPositiveDifference > 0) {
         dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
         dailyPercentPositiveDifferenceElement.innerHTML = `Positive Rate increased by ${dailyPercentPositiveDifference.toFixed(2)}% over last 24 hours.`
-        }
+    }
     
-        let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
-        compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
     
+    
+    //If MaxDailyPercentPositiveToday is 0 and New Tests is 0,  Do not show a Difference. Just state there were no new tests today. 
+    if (maxDailyPercentPositiveToday === "NaN") {
+        maxDailyPercentPositiveToday = 0
+    }
+    
+    if (maxDailyPercentPositiveToday === 0 && averageNewTestsToday === 0) {
+        let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
+        dailyPercentPositiveDifferenceElement.innerHTML = `There were no new tests today.`
+    }
+    console.log(maxDailyPercentPositiveToday)
+      
+      let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
+      compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
+            
 
                             /* CURRENTLY HOSPITALIZED */
             const hospitalizedCurrently = data[0].hospitalizedCurrently
