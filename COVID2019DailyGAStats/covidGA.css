@@ -1,8 +1,8 @@
-/*Responsive Styling for Mobile Devices*/ 
+/*Responsive Styling for Mobile Devices*/
 @media all  and (max-width: 600px) {
     #CovidHeadline {  
         width: 225%;
-        background-color:  #ba0c2f; 
+        background-color:  #ba0c2f;
       color:  white;
         
     }
@@ -17,6 +17,14 @@
       color: black;
       font-size: 1.2em;
       }
+
+      #sectionContainer {
+        display: inline-flex;
+        padding: 10px;
+        font-size: 0.9em;
+        
+        
+    }
   
   }  
   
@@ -25,7 +33,7 @@
   /* POPUP/ALERT STYLING */
   .swal-modal {
       background-color: rgba(24, 23, 23, 0.89);
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
       color: white;
       border: 3px double white;
     }
@@ -64,7 +72,37 @@
   
   /*************************************/
   #written { 
-      font-family: 'Baloo Paaji 2', cursive;
+    font-family: 'Inconsolata', monospace;
+  }
+
+  .linksContainer {
+        display: flex;
+        padding: 10px;
+       
+        
+  }  
+
+
+  .statesLink {
+    background-color: white;
+    display: inline-flex;
+    width: fit-content;
+    color: #ba0c2f;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 1px 1px 5px #031938;
+    font-family: 'Inconsolata', monospace;
+    margin-left: 10px;
+  }
+
+  .countyLinks {
+      background-color: #ba0c2f;
+      color: whitesmoke;
+      padding: 5px;
+      text-decoration: none;
+      box-shadow: 1px 1px 5px #031938;
+      font-family: 'Inconsolata', monospace;
+      margin-left: 10px;
   }
   
   
@@ -117,7 +155,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   #maxDailyPositiveIncrease {
@@ -128,7 +166,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   #averageDailyPositiveIncrease {
@@ -139,7 +177,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
 
   #currentlyHospitalized {
@@ -150,7 +188,7 @@
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    font-family: 'Baloo Paaji 2', cursive;
+    font-family: 'Inconsolata', monospace;
 }
   
   #section2 {
@@ -171,7 +209,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   #maxNewTests {
@@ -182,7 +220,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   #averageNewTests {
@@ -193,7 +231,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   #section3 {
@@ -213,7 +251,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   
@@ -225,7 +263,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   #compareTodayTo15DayAverageElement {
@@ -236,7 +274,7 @@
       padding: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
   }
   
   
@@ -252,7 +290,7 @@
       border-collapse: collapse;
       padding: 15px;
       text-align: center;
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
     }
   
   #date {
@@ -346,7 +384,7 @@
   }
   
   #percentPositiveRow {
-      background-color: coral; 
+      background-color: coral;
       color: white;
   }
   
