@@ -33,7 +33,7 @@
   /* POPUP/ALERT STYLING */
   .swal-modal {
       background-color: rgba(24, 23, 23, 0.89);
-      font-family: 'Baloo Paaji 2', cursive;
+      font-family: 'Inconsolata', monospace;
       color: white;
       border: 3px double white;
     }
@@ -78,6 +78,7 @@
   .linksContainer {
         display: flex;
         padding: 10px;
+       
         
   }  
 
@@ -91,6 +92,7 @@
     text-decoration: none;
     box-shadow: 1px 1px 5px #031938;
     font-family: 'Inconsolata', monospace;
+    margin-left: 10px;
   }
 
   .countyLinks {
@@ -100,6 +102,7 @@
       text-decoration: none;
       box-shadow: 1px 1px 5px #031938;
       font-family: 'Inconsolata', monospace;
+      margin-left: 10px;
   }
   
   
