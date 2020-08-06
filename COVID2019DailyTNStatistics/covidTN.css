@@ -17,6 +17,14 @@
       color: black;
       font-size: 1.2em;
       }
+
+      #sectionContainer {
+        display: inline-flex;
+        padding: 10px;
+        font-size: 0.9em;
+        
+        
+    }
   
   }  
   
@@ -67,9 +75,27 @@
     font-family: 'Inconsolata', monospace;
   }
 
+  .linksContainer {
+        display: flex;
+        padding: 10px;
+        
+  }  
+
+
+  .statesLink {
+    background-color: white;
+    display: inline-flex;
+    width: fit-content;
+    color: #ff8200;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 1px 1px 5px #031938;
+    font-family: 'Inconsolata', monospace;
+  }
+
   .countyLinks {
-      background-color: rgb(238, 255, 0);
-      color: black;
+      background-color: #ff8200;
+      color: whitesmoke;
       padding: 5px;
       text-decoration: none;
       box-shadow: 1px 1px 5px #031938;
