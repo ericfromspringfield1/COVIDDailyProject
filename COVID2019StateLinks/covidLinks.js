@@ -1,88 +1,34 @@
-// *********** Link each state to this site for daily stats ******************* //
+/*function searchState(searchTerm) {
+    fetch((`https://covidtracking.com/api/v1/states/${searchTerm}/daily.json`))
+        .then(result => {
+            return result.json();
+        })
+        .then(result => {
+            init(result)
+        })
+}
 
-/*const dataURL = `https://covidtracking.com/api/v1/states/al/daily.json`;
+
+function init(resultFromServer) {
+    switch (resultFromServer.searchState) {
+        case 'AL':
+            url = "https://ericfromspringfield1.github.io/COVIDDailyProject/COVID2019DailyALStats/covidAL.html"
+            break;
 
 
-fetch(dataURL)
-.then(function(resp) {
-    return resp.json();
-})
-.then(data =>  {
-    console.log(data)
-    
+        default:
+            break;
 
-  const stateWrapper = document.querySelector("table");
-  const renderToDom = resultsString => {
-    stateWrapper.innerHTML += resultsString;
-    console.log(stateWrapper)
-
-    
-};
-
-const resultsHtmlRepresentation = stateObj => {
-    let percentPositive = (stateObj.positive / stateObj.totalTestResults * 100).toFixed(2)
-    let percentDeathOfPositive = (stateObj.death / stateObj.positive * 100).toFixed(2)
-
-    //If the increase is greater than zero for positive increase and test increase, do the calculation. Else, just assume 0%.
-    //Otherwise, the cell will render NaN.
-    if (stateObj.positiveIncrease > 0 || stateObj.totalTestResultsIncrease > 0) {
-    dailyPercentPositive = (stateObj.positiveIncrease / stateObj.totalTestResultsIncrease * 100).toFixed(2) 
-    }
-        if (stateObj.positiveIncrease === 0 || stateObj.totalTestResultsIncrease === 0)
-        dailyPercentPositive = 0
-    
-    if (stateObj.death === null) {
-        stateObj.death = 0
-    }  
-    
-    if (stateObj.lastUpdateEt === null) {
-        stateObj.lastUpdateEt = 0
-    }
-
-    if (stateObj.negative === null) {
-        stateObj.negative = 0
-    }
-
-    if (percentDeathOfPositive === "NaN") {
-        percentDeathOfPositive = 0
-    }
-
-    if (percentPositive === "NaN") {
-        percentPositive = 0
+        }
+        console.log(resultFromServer)
     }
 
 
     
-     
-     return `
-     <body>
-     <div class=${"wrapper"}>
-     <table rowspan=${data.length} style="width:100%">
-     <p id=${"writtenP1"}></p>
-     <tr>
-     <td id=${"dateData"}>${stateObj.lastUpdateEt}</td>
-     <td id=${"stateData"}>${stateObj.state}</td>
-     <td id=${"positiveData"}>${stateObj.positive}</td>
-     <td id=${"negativeData"}>${stateObj.negative}</td>
-     <td id=${"totalTestResultsData"}>${stateObj.totalTestResults}</td>
-     <td id=${"deathData"}>${stateObj.death}</td>
-     <td id=${"percentPositiveRow"}>${percentPositive}%</td>
-     <td id=${"percentDeathOfPositiveData"}>${percentDeathOfPositive}%</td>
-     <td id=${"newTestsData"}>${stateObj.totalTestResultsIncrease}</td>
-     <td id=${"newCasesData"}>${stateObj.positiveIncrease}</td>
-     <td id=${"dailyPercentPositiveData"}>${dailyPercentPositive}%</td>
-     <td id=${"newDeathsData"}>${stateObj.deathIncrease}</td>
-     </tr>
-     </table>
-     </div>
-     `;
-    }
 
-data.forEach(stateObj => {
-    const HtmlString = resultsHtmlRepresentation(stateObj);
-    renderToDom(HtmlString); 
-
-
-    })
+document.getElementById('searchBtn').addEventListener('click', () => {
+    let searchTerm = document.getElementById('searchInput').value;
+    if(searchTerm)
+    searchState(searchTerm)
 })
 */

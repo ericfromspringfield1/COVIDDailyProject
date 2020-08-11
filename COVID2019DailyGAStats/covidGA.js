@@ -1,11 +1,12 @@
 // *********** Link each state to this site for daily stats ******************* //
+// *********** Write code to make dataURL searchable by state code (tn, al, etc.)
 
 const dataURL = `https://covidtracking.com/api/v1/states/ga/daily.json`;
 
 
 
 fetch(dataURL)
-.then(function(resp) { 
+.then(function(resp) {
     return resp.json();
 })
 .then(data =>  {
@@ -47,7 +48,7 @@ if  (todayPositive > 10) {
     },
     });
 } else if 
-    (todayPositive < 10 && (todayPositive > compPositive)) {
+    (todayPositive < 10 && (todayPositive < compPositive)) {
     swal(`Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}p, but...`,
     `${data[0].state} remains ${differencePositive.toFixed(2)}% above the overall positive percentage average of ${compPositive}%.`, 'warning',
    { 
@@ -59,7 +60,6 @@ if  (todayPositive > 10) {
     },
 },
 });
-    
 
 } else if 
 (todayPositive < 10 && (differencePositiveComp > 0)) {
@@ -75,10 +75,10 @@ noMask: {
 },
 });
 
-
-} else if 
+    }
+else if 
 (todayPositive < 10) {
-    swal(`KEEP UP THE GREAT WORK IN THE ${data[0].state}!`, `Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}pm. ${todayPositive}% to be exact. In other words, keep doing you!`, 'warning',
+    swal(`KEEP UP THE GREAT WORK IN THE ${data[0].state}!`, `Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}pm. ${todayPositive}% to be exact. In other words, keep doing you!`, 'success',
 { 
     buttons: {
     mask: "I'll Wear A Mask",
@@ -221,11 +221,6 @@ var averageDailyPositiveIncrease = total / arrayAverageOfPositiveIncrease.length
 
 
 
-/* NEED MAX FOR NEGATIVE TESTS AND AVERAGE OF NEGATIVE TESTS OVER 15 DAYS */
-
-/* NEED DIFFERENCE BETWEEN TODAY POSITIVE & 15-DAY AVERAGE */
-
-
 /****************************MAX DAILY PERCENT POSITIVE OVER 15 DAYS***************************************************** */
 let maxDailyPercentPositiveToday = (data[0].positiveIncrease / data[0].totalTestResultsIncrease * 100).toFixed(2)
 let maxDailyPercentPositiveYesterday = (data[1].positiveIncrease / data[1].totalTestResultsIncrease * 100).toFixed(2)
@@ -246,42 +241,43 @@ let maxDailyPercentPositive14Days = (data[14].positiveIncrease / data[14].totalT
 
 let arrayOfDailyPercentPositive = []
 
-        arrayOfDailyPercentPositive.push(maxDailyPercentPositiveToday, maxDailyPercentPositiveYesterday, maxDailyPercentPositive2Days, maxDailyPercentPositive3Days, maxDailyPercentPositive4Days, maxDailyPercentPositive5Days, maxDailyPercentPositive6Days, maxDailyPercentPositive7Days, maxDailyPercentPositive8Days, maxDailyPercentPositive9Days, maxDailyPercentPositive10Days, maxDailyPercentPositive11Days, maxDailyPercentPositive12Days, maxDailyPercentPositive13Days, maxDailyPercentPositive14Days)
-    
-        //If array contains a zero (0), it will return as NaN, creating a result of NaN when considering those items in the array. 
-        //For example, Max Daily Positive Percent would return NaN if any Daily Percent Positive is zero(0). 
-        //The first function removes the NaN once and removes all instances of the NaN in the array, allowing only numbers to be considered
-        function removeItemOnce(arrayOfDailyPercentPositive, value) {
-            var index = arrayOfDailyPercentPositive.indexOf(value);
-            if (index > -1) {
-              arrayOfDailyPercentPositive.splice(index, 1);
-            }
-            return arrayOfDailyPercentPositive;
-          }
-        function removeItemAll(arrayOfDailyPercentPositive, value) {
-            var i = 0;
-            while (i < arrayOfDailyPercentPositive.length) {
-              if (arrayOfDailyPercentPositive[i] === value) {
-                arrayOfDailyPercentPositive.splice(i, 1);
-              } else {
-                ++i;
-              }
-            }
-            return arrayOfDailyPercentPositive;
-          }
-        
-        console.log(removeItemOnce(arrayOfDailyPercentPositive, "NaN"))
-        console.log(removeItemAll(arrayOfDailyPercentPositive, "NaN"))
-
-        const maxDailyPercentPositive = arrayOfDailyPercentPositive.reduce(function(a, b) {
-            return Math.max(a, b);    
-       });
-       console.log(maxDailyPercentPositive);
-    let maxDailyPercentPositiveElement = document.getElementById('maxDailyPercentPositive')
-    maxDailyPercentPositiveElement.innerHTML = `MAX DAILY POSITIVE PERCENT (last 15 days) - ${maxDailyPercentPositive}%. `
+arrayOfDailyPercentPositive.push(maxDailyPercentPositiveToday, maxDailyPercentPositiveYesterday, maxDailyPercentPositive2Days, maxDailyPercentPositive3Days, maxDailyPercentPositive4Days, maxDailyPercentPositive5Days, maxDailyPercentPositive6Days, maxDailyPercentPositive7Days, maxDailyPercentPositive8Days, maxDailyPercentPositive9Days, maxDailyPercentPositive10Days, maxDailyPercentPositive11Days, maxDailyPercentPositive12Days, maxDailyPercentPositive13Days, maxDailyPercentPositive14Days)
 
 
-    
+//If array contains a zero (0), it will return as NaN, creating a result of NaN when considering those items in the array. 
+//For example, Max Daily Positive Percent would return NaN if any Daily Percent Positive is zero(0). 
+//The first function removes the NaN once and removes all instances of the NaN in the array, allowing only numbers to be considered
+function removeItemOnce(arrayOfDailyPercentPositive, value) {
+    var index = arrayOfDailyPercentPositive.indexOf(value);
+    if (index > -1) {
+        arrayOfDailyPercentPositive.splice(index, 1);
+    }
+    return arrayOfDailyPercentPositive;
+}
+function removeItemAll(arrayOfDailyPercentPositive, value) {
+    var i = 0;
+    while (i < arrayOfDailyPercentPositive.length) {
+        if (arrayOfDailyPercentPositive[i] === value) {
+            arrayOfDailyPercentPositive.splice(i, 1);
+        } else {
+            ++i;
+        }
+    }
+    return arrayOfDailyPercentPositive;
+}
+
+console.log(removeItemOnce(arrayOfDailyPercentPositive, "NaN"))
+console.log(removeItemAll(arrayOfDailyPercentPositive, "NaN"))
+
+const maxDailyPercentPositive = arrayOfDailyPercentPositive.reduce(function(a, b) {
+    return Math.max(a, b);    
+});
+console.log(maxDailyPercentPositive);
+let maxDailyPercentPositiveElement = document.getElementById('maxDailyPercentPositive')
+maxDailyPercentPositiveElement.innerHTML = `MAX DAILY POSITIVE PERCENT (last 15 days) - ${maxDailyPercentPositive}%. `
+
+
+
 /* MAX FOR TOTAL TESTS AND AVERAGE OF TOTAL TESTS OVER 15 DAYS*/
 let maxNewTestsToday = (data[0].totalTestResultsIncrease)
 let maxNewTestsYesterday = (data[1].totalTestResultsIncrease)
@@ -301,35 +297,130 @@ let maxNewTests14Days = (data[14].totalTestResultsIncrease)
 
 
 let arrayOfNewTests = []
+let arrayOfNewTestsSevenDays = []
+let arrayOfNewTestsPreviousSevenDays = []
 
-        arrayOfNewTests.push(maxNewTestsToday, maxNewTestsYesterday, maxNewTests2Days, maxNewTests3Days, maxNewTests4Days, 
-            maxNewTests5Days, maxNewTests6Days, maxNewTests7Days, maxNewTests8Days, maxNewTests9Days, 
-            maxNewTests10Days, maxNewTests11Days, maxNewTests12Days, maxNewTests13Days, maxNewTests14Days)
+arrayOfNewTests.push(maxNewTestsToday, maxNewTestsYesterday, maxNewTests2Days, maxNewTests3Days, maxNewTests4Days, 
+    maxNewTests5Days, maxNewTests6Days, maxNewTests7Days, maxNewTests8Days, maxNewTests9Days, 
+    maxNewTests10Days, maxNewTests11Days, maxNewTests12Days, maxNewTests13Days, maxNewTests14Days)
+
+arrayOfNewTestsSevenDays.push(maxNewTestsToday, maxNewTestsYesterday, maxNewTests2Days, maxNewTests3Days, maxNewTests4Days, 
+    maxNewTests5Days, maxNewTests6Days)
+
+arrayOfNewTestsPreviousSevenDays.push(maxNewTests7Days, maxNewTests8Days, maxNewTests9Days, 
+        maxNewTests10Days, maxNewTests11Days, maxNewTests12Days, maxNewTests13Days)
     
-        const maxNewTests = arrayOfNewTests.reduce(function(a, b) {
-            return Math.max(a, b);
-        });
-        console.log(maxNewTests);
-
-        let maxNewTestsElement = document.getElementById('maxNewTests')
-        maxNewTestsElement.innerHTML = `Most NEW TESTS ADMINISTERED in one day (last 15 days) - ${maxNewTests}. `
-        
-
-        
-        /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE LAST 15 DAYS*/
+    const maxNewTests = arrayOfNewTests.reduce(function(a, b) {
+        return Math.max(a, b);
+    });
+    console.log(maxNewTests);
+    
+    let maxNewTestsElement = document.getElementById('maxNewTests')
+    maxNewTestsElement.innerHTML = `Most NEW TESTS ADMINISTERED in one day (last 15 days) - ${maxNewTests}. `
+    
+    
+    
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE LAST 15 DAYS*/
     const totalNewTests = arrayOfNewTests.reduce(function(a, b) {
         return a + b;
     }, 0);
     console.log(totalNewTests);
 
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE LAST 7 DAYS*/
+    const totalNewTestsSevenDays = arrayOfNewTestsSevenDays.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+    console.log(totalNewTestsSevenDays);
 
-//let totalNewTestsElement = document.getElementById('totalNewTests')
-//totalNewTestsElement.innerHTML = `${data[i].state}'s TOTAL number of NEW TESTS ADMINISTERED over the last 15 days is ${totalNewTests}. `
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (2 weeks ago)*/
+    const totalNewTestsPreviousSevenDays = arrayOfNewTestsPreviousSevenDays.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+    console.log(totalNewTestsPreviousSevenDays);
+    
+    
+    //let totalNewTestsElement = document.getElementById('totalNewTests')
+    //totalNewTestsElement.innerHTML = `${data[i].state}'s TOTAL number of NEW TESTS ADMINISTERED over the last 15 days is ${totalNewTests}. `
+    
+                /* RETURN TOTAL DAILY POSITIVE INCREASE OVER 7 DAYS AND PREVIOUS 7 DAYS*/
+let arrayOfPositiveIncrease7Days = []
+arrayOfPositiveIncrease7Days.push(dailyPositiveIncreaseToday, dailyPositiveIncreaseYesterday, dailyPositiveIncrease2Days, dailyPositiveIncrease3Days,dailyPositiveIncrease4Days, dailyPositiveIncrease5Days, dailyPositiveIncrease6Days)
+const totalDailyPositiveIncrease7Days = arrayOfPositiveIncrease7Days.reduce(function(a, b) {
+    return a + b;
+}, 0);
+console.log(totalDailyPositiveIncrease7Days);
 
-const percentPositiveOver15Days = (totalDailyPositiveIncrease / totalNewTests * 100).toFixed(2)
-let percentPositiveOver15DaysElement = document.getElementById('percentPositiveOver15Days')
-percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 days) - ${percentPositiveOver15Days}%.`
+let arrayOfPositiveIncreasePrevious7Days = []
+arrayOfPositiveIncreasePrevious7Days.push(dailyPositiveIncrease7Days, dailyPositiveIncrease8Days, dailyPositiveIncrease9Days, dailyPositiveIncrease10Days, dailyPositiveIncrease11Days, dailyPositiveIncrease12Days, dailyPositiveIncrease13Days)
+const totalDailyPositiveIncreasePrevious7Days = arrayOfPositiveIncrease7Days.reduce(function(a, b) {
+    return a + b;
+}, 0);
+console.log(totalDailyPositiveIncreasePrevious7Days);
 
+            /*RENDER POSITIVE % OVER 15 DAYS, 7 DAYS, AND PREVIOUS 7 DAYS*/
+    const percentPositiveOver15Days = (totalDailyPositiveIncrease / totalNewTests * 100).toFixed(2)
+    let percentPositiveOver15DaysElement = document.getElementById('percentPositiveOver15Days')
+    percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 days) - ${percentPositiveOver15Days}%`
+
+    const percentPositiveOver7Days = (totalDailyPositiveIncrease7Days / totalNewTestsSevenDays * 100).toFixed(2)
+    let percentPositiveOver7DaysElement = document.getElementById('percentPositiveOver7Days')
+    percentPositiveOver7DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 7 days) - ${percentPositiveOver7Days}%`
+
+    const percentPositiveOverPrevious7Days = (totalDailyPositiveIncreasePrevious7Days / totalNewTestsPreviousSevenDays * 100).toFixed(2)
+    let percentPositiveOverPrevious7DaysElement = document.getElementById('percentPositiveOverPrevious7Days')
+    percentPositiveOverPrevious7DaysElement.innerHTML = `PERCENT POSITIVE RATE (7 days 2 weeks ago) - ${percentPositiveOverPrevious7Days}%`
+
+  /***************************  REMOVE ANY 0's FROM AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
+  function removeZeroOnce(arrayOfPositiveIncrease7Days, value) {
+    var index = arrayOfPositiveIncrease7Days.indexOf(value);
+    if (index > -1) {
+        arrayOfPositiveIncrease7Days.splice(index, 1);
+    }
+    return arrayOfPositiveIncrease7Days;
+}
+   function removeZeroAll(arrayOfPositiveIncrease7Days, value) {
+    var i = 0;
+    while (i < arrayOfPositiveIncrease7Days.length) {
+        if (arrayOfPositiveIncrease7Days[i] === value) {
+            arrayOfPositiveIncrease7Days.splice(i, 1);
+        } else {
+            ++i;
+        }
+    }
+    return arrayOfPositiveIncrease7Days;
+}
+
+console.log(removeZeroOnce(arrayOfPositiveIncrease7Days, 0))
+console.log(removeZeroAll(arrayOfPositiveIncrease7Days, 0))
+
+
+/***************************  REMOVE ANY 0's FROM AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
+function removeOneZero(arrayOfPositiveIncreasePrevious7Days, value) {
+    var index = arrayOfPositiveIncreasePrevious7Days.indexOf(value);
+    if (index > -1) {
+        arrayOfPositiveIncreasePrevious7Days.splice(index, 1);
+    }
+    return arrayOfPositiveIncreasePrevious7Days;
+}
+   function removeAllZero(arrayOfPositiveIncreasePrevious7Days, value) {
+    var i = 0;
+    while (i < arrayOfPositiveIncreasePrevious7Days.length) {
+        if (arrayOfPositiveIncreasePrevious7Days[i] === value) {
+            arrayOfPositiveIncreasePrevious7Days.splice(i, 1);
+        } else {
+            ++i;
+        }
+    }
+    return arrayOfPositiveIncreasePrevious7Days;
+}
+
+console.log(removeOneZero(arrayOfPositiveIncreasePrevious7Days, 0))
+console.log(removeAllZero(arrayOfPositiveIncreasePrevious7Days, 0))
+    
+   
+
+    
+    
     //*************RETURN rolling average over 15 days***************//
     let averageNewTestsToday = data[0].totalTestResultsIncrease
     let averageNewTestsYesterday = data[1].totalTestResultsIncrease
@@ -356,26 +447,26 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
         total += arrayAverageOftotalTestResultsIncrease[i];
     }
     var averageNewTests = total / arrayAverageOftotalTestResultsIncrease.length;
-        console.log(`Average New Tests Per Day is ${averageNewTests}`);
+    console.log(`Average New Tests Per Day is ${averageNewTests}`);
     
-        let averageNewTestsElement = document.getElementById('averageNewTests')
-        averageNewTestsElement.innerHTML = `NEW TESTS PER DAY (15-day Avg) - ${averageNewTests.toFixed(0)}`
+    let averageNewTestsElement = document.getElementById('averageNewTests')
+    averageNewTestsElement.innerHTML = `NEW TESTS PER DAY (15-day Avg) - ${averageNewTests.toFixed(0)}`
     
-
     
-        let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
-        let dailyPercentPositiveDifference2 = (maxDailyPercentPositiveYesterday - maxDailyPercentPositiveToday)
-        console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
     
-        if (dailyPercentPositiveDifference < 0) {
+    let dailyPercentPositiveDifference = (maxDailyPercentPositiveToday - maxDailyPercentPositiveYesterday)
+    let dailyPercentPositiveDifference2 = (maxDailyPercentPositiveYesterday - maxDailyPercentPositiveToday)
+    console.log(`Today's difference is ${dailyPercentPositiveDifference}%`)
+    
+    if (dailyPercentPositiveDifference < 0) {
         let dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
         dailyPercentPositiveDifferenceElement.innerHTML = `Today's Positive Rate decreased by ${dailyPercentPositiveDifference2.toFixed(2)}%.`
     }
-        
-        if (dailyPercentPositiveDifference > 0) {
+    
+    if (dailyPercentPositiveDifference > 0) {
         dailyPercentPositiveDifferenceElement = document.getElementById('dailyPercentPositiveDifferenceElement')
         dailyPercentPositiveDifferenceElement.innerHTML = `Positive Rate increased by ${dailyPercentPositiveDifference.toFixed(2)}% over last 24 hours.`
-        }
+    }
     
     //If MaxDailyPercentPositiveToday is 0 and New Tests is 0,  Do not show a Difference. Just state there were no new tests today. 
     if (maxDailyPercentPositiveToday === "NaN") {
@@ -391,13 +482,11 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
       let compareTodayTo15DayAverageElement = document.getElementById('compareTodayTo15DayAverageElement')
       compareTodayTo15DayAverageElement.innerHTML = `TODAY'S POSITIVE RATE - ${maxDailyPercentPositiveToday}% <hr> 15-DAY ROLLING AVERAGE - ${percentPositiveOver15Days}%.`
     
-    
-
-                            /* CURRENTLY HOSPITALIZED */
-            const hospitalizedCurrently = data[0].hospitalizedCurrently
-            let currentlyHospitalizedElement = document.getElementById('currentlyHospitalized')
-            currentlyHospitalizedElement.innerHTML = `CURRENTLY HOSPITALIZED - ${hospitalizedCurrently}. `
-
+        /* CURRENTLY HOSPITALIZED */
+        const hospitalizedCurrently = data[0].hospitalizedCurrently
+        let currentlyHospitalizedElement = document.getElementById('currentlyHospitalized')
+        currentlyHospitalizedElement.innerHTML = `CURRENTLY HOSPITALIZED - ${hospitalizedCurrently}. `
+                    
 /*****************************************************************************************************************************/
    
        
@@ -428,7 +517,11 @@ percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 day
                 stateObj.negative = 0
             }
 
-            
+            /* CURRENTLY HOSPITALIZED */
+    const hospitalizedCurrently = data[0].hospitalizedCurrently
+    let currentlyHospitalizedElement = document.getElementById('currentlyHospitalized')
+    currentlyHospitalizedElement.innerHTML = `CURRENTLY HOSPITALIZED - ${hospitalizedCurrently}. `
+    
              
             
             return `

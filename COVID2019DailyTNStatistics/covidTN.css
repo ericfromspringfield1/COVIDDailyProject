@@ -276,6 +276,37 @@
       margin-right: 10px;
       font-family: 'Inconsolata', monospace;
   }
+
+  #section4 {
+    box-shadow: 1px 1px 5px #031938;
+    border-radius: 3%;
+    width: fit-content;
+    background-color: rgb(12, 66, 102);
+    margin-right: 10px; 
+    
+}
+
+#percentPositiveOver7Days {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
   
   
   .table {
