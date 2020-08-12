@@ -324,19 +324,19 @@ arrayOfNewTestsPreviousSevenDays.push(maxNewTests7Days, maxNewTests8Days, maxNew
     const totalNewTests = arrayOfNewTests.reduce(function(a, b) {
         return a + b;
     }, 0);
-    console.log(totalNewTests);
+    console.log(`Total New Tests 15 Days ${totalNewTests}`);
 
     /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE LAST 7 DAYS*/
     const totalNewTestsSevenDays = arrayOfNewTestsSevenDays.reduce(function(a, b) {
         return a + b;
     }, 0);
-    console.log(totalNewTestsSevenDays);
+    console.log(`Total New Test Seven Days ${totalNewTestsSevenDays}`);
 
     /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (2 weeks ago)*/
     const totalNewTestsPreviousSevenDays = arrayOfNewTestsPreviousSevenDays.reduce(function(a, b) {
         return a + b;
     }, 0);
-    console.log(totalNewTestsPreviousSevenDays);
+    console.log(`Total New Test Previous Seven Days ${totalNewTestsPreviousSevenDays}`);
     
     
     //let totalNewTestsElement = document.getElementById('totalNewTests')
@@ -348,14 +348,14 @@ arrayOfPositiveIncrease7Days.push(dailyPositiveIncreaseToday, dailyPositiveIncre
 const totalDailyPositiveIncrease7Days = arrayOfPositiveIncrease7Days.reduce(function(a, b) {
     return a + b;
 }, 0);
-console.log(totalDailyPositiveIncrease7Days);
+console.log(`Total Daily Positive Increase Over 7 Days ${totalDailyPositiveIncrease7Days}`);
 
 let arrayOfPositiveIncreasePrevious7Days = []
 arrayOfPositiveIncreasePrevious7Days.push(dailyPositiveIncrease7Days, dailyPositiveIncrease8Days, dailyPositiveIncrease9Days, dailyPositiveIncrease10Days, dailyPositiveIncrease11Days, dailyPositiveIncrease12Days, dailyPositiveIncrease13Days)
-const totalDailyPositiveIncreasePrevious7Days = arrayOfPositiveIncrease7Days.reduce(function(a, b) {
+const totalDailyPositiveIncreasePrevious7Days = arrayOfPositiveIncreasePrevious7Days.reduce(function(a, b) {
     return a + b;
 }, 0);
-console.log(totalDailyPositiveIncreasePrevious7Days);
+console.log(`Total Daily Positive Increase Previous 7 Days ${totalDailyPositiveIncreasePrevious7Days}`);
 
             /*RENDER POSITIVE % OVER 15 DAYS, 7 DAYS, AND PREVIOUS 7 DAYS*/
     const percentPositiveOver15Days = (totalDailyPositiveIncrease / totalNewTests * 100).toFixed(2)
