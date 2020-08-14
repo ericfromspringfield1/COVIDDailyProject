@@ -154,6 +154,26 @@ let dailyPositiveIncrease11Days = data[11].positiveIncrease
 let dailyPositiveIncrease12Days = data[12].positiveIncrease
 let dailyPositiveIncrease13Days = data[13].positiveIncrease
 let dailyPositiveIncrease14Days = data[14].positiveIncrease
+let dailyPositiveIncrease15Days = data[15].positiveIncrease
+let dailyPositiveIncrease16Days = data[16].positiveIncrease
+let dailyPositiveIncrease17Days = data[17].positiveIncrease
+let dailyPositiveIncrease18Days = data[18].positiveIncrease
+let dailyPositiveIncrease19Days = data[19].positiveIncrease
+let dailyPositiveIncrease20Days = data[20].positiveIncrease
+let dailyPositiveIncrease21Days = data[21].positiveIncrease
+let dailyPositiveIncrease22Days = data[22].positiveIncrease
+let dailyPositiveIncrease23Days = data[23].positiveIncrease
+let dailyPositiveIncrease24Days = data[24].positiveIncrease
+let dailyPositiveIncrease25Days = data[25].positiveIncrease
+let dailyPositiveIncrease26Days = data[26].positiveIncrease
+let dailyPositiveIncrease27Days = data[27].positiveIncrease
+let dailyPositiveIncrease28Days = data[28].positiveIncrease
+let dailyPositiveIncrease29Days = data[29].positiveIncrease
+let dailyPositiveIncrease30Days = data[30].positiveIncrease
+let dailyPositiveIncrease31Days = data[31].positiveIncrease
+let dailyPositiveIncrease32Days = data[32].positiveIncrease
+let dailyPositiveIncrease33Days = data[33].positiveIncrease
+let dailyPositiveIncrease34Days = data[34].positiveIncrease
 let arrayOfPositiveIncrease = []
 
 arrayOfPositiveIncrease.push(dailyPositiveIncreaseToday, dailyPositiveIncreaseYesterday, dailyPositiveIncrease2Days, dailyPositiveIncrease3Days,dailyPositiveIncrease4Days, dailyPositiveIncrease5Days, dailyPositiveIncrease6Days, dailyPositiveIncrease7Days, dailyPositiveIncrease8Days, dailyPositiveIncrease9Days, dailyPositiveIncrease10Days, dailyPositiveIncrease11Days, dailyPositiveIncrease12Days, dailyPositiveIncrease13Days, dailyPositiveIncrease14Days)
@@ -294,11 +314,34 @@ let maxNewTests11Days = (data[11].totalTestResultsIncrease)
 let maxNewTests12Days = (data[12].totalTestResultsIncrease) 
 let maxNewTests13Days = (data[13].totalTestResultsIncrease) 
 let maxNewTests14Days = (data[14].totalTestResultsIncrease) 
+let maxNewTests15Days = (data[15].totalTestResultsIncrease) 
+let maxNewTests16Days = (data[16].totalTestResultsIncrease) 
+let maxNewTests17Days = (data[17].totalTestResultsIncrease) 
+let maxNewTests18Days = (data[18].totalTestResultsIncrease) 
+let maxNewTests19Days = (data[19].totalTestResultsIncrease) 
+let maxNewTests20Days = (data[20].totalTestResultsIncrease) 
+let maxNewTests21Days = (data[21].totalTestResultsIncrease) 
+let maxNewTests22Days = (data[22].totalTestResultsIncrease) 
+let maxNewTests23Days = (data[23].totalTestResultsIncrease) 
+let maxNewTests24Days = (data[24].totalTestResultsIncrease) 
+let maxNewTests25Days = (data[25].totalTestResultsIncrease) 
+let maxNewTests26Days = (data[26].totalTestResultsIncrease) 
+let maxNewTests27Days = (data[27].totalTestResultsIncrease) 
+let maxNewTests28Days = (data[28].totalTestResultsIncrease) 
+let maxNewTests29Days = (data[29].totalTestResultsIncrease) 
+let maxNewTests30Days = (data[30].totalTestResultsIncrease) 
+let maxNewTests31Days = (data[31].totalTestResultsIncrease) 
+let maxNewTests32Days = (data[32].totalTestResultsIncrease) 
+let maxNewTests33Days = (data[33].totalTestResultsIncrease) 
+let maxNewTests34Days = (data[34].totalTestResultsIncrease) 
 
 
 let arrayOfNewTests = []
 let arrayOfNewTestsSevenDays = []
 let arrayOfNewTestsPreviousSevenDays = []
+let arrayOfNewTestsPreviousSevenDays2Weeks = []
+let arrayOfNewTestsPreviousSevenDays3Weeks = []
+let arrayOfNewTestsPreviousSevenDays4Weeks = []
 
 arrayOfNewTests.push(maxNewTestsToday, maxNewTestsYesterday, maxNewTests2Days, maxNewTests3Days, maxNewTests4Days, 
     maxNewTests5Days, maxNewTests6Days, maxNewTests7Days, maxNewTests8Days, maxNewTests9Days, 
@@ -309,6 +352,15 @@ arrayOfNewTestsSevenDays.push(maxNewTestsToday, maxNewTestsYesterday, maxNewTest
 
 arrayOfNewTestsPreviousSevenDays.push(maxNewTests7Days, maxNewTests8Days, maxNewTests9Days, 
         maxNewTests10Days, maxNewTests11Days, maxNewTests12Days, maxNewTests13Days)
+
+arrayOfNewTestsPreviousSevenDays2Weeks.push(maxNewTests14Days, maxNewTests15Days, maxNewTests16Days, 
+        maxNewTests17Days, maxNewTests18Days, maxNewTests19Days, maxNewTests20Days)
+
+arrayOfNewTestsPreviousSevenDays3Weeks.push(maxNewTests21Days, maxNewTests22Days, maxNewTests23Days, 
+        maxNewTests24Days, maxNewTests25Days, maxNewTests26Days, maxNewTests27Days)
+
+arrayOfNewTestsPreviousSevenDays4Weeks.push(maxNewTests28Days, maxNewTests29Days, maxNewTests30Days, 
+        maxNewTests31Days, maxNewTests32Days, maxNewTests33Days, maxNewTests34Days)
     
     const maxNewTests = arrayOfNewTests.reduce(function(a, b) {
         return Math.max(a, b);
@@ -332,11 +384,29 @@ arrayOfNewTestsPreviousSevenDays.push(maxNewTests7Days, maxNewTests8Days, maxNew
     }, 0);
     console.log(`Total New Test Seven Days ${totalNewTestsSevenDays}`);
 
-    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (2 weeks ago)*/
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (1 weeks ago)*/
     const totalNewTestsPreviousSevenDays = arrayOfNewTestsPreviousSevenDays.reduce(function(a, b) {
         return a + b;
     }, 0);
-    console.log(`Total New Test Previous Seven Days ${totalNewTestsPreviousSevenDays}`);
+    console.log(`Total New Test Previous Seven Days (1 Week Ago) ${totalNewTestsPreviousSevenDays}`);
+
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (2 weeks ago)*/
+    const totalNewTestsPreviousSevenDays2Weeks = arrayOfNewTestsPreviousSevenDays2Weeks.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+    console.log(`Total New Test Previous Seven Days (2 Weeks Ago) ${totalNewTestsPreviousSevenDays2Weeks}`);
+
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (3 weeks ago)*/
+    const totalNewTestsPreviousSevenDays3Weeks = arrayOfNewTestsPreviousSevenDays3Weeks.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+    console.log(`Total New Test Previous Seven Days (3 Weeks Ago) ${totalNewTestsPreviousSevenDays3Weeks}`);
+
+    /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE PREVIOUS 7 DAYS (4 weeks ago)*/
+    const totalNewTestsPreviousSevenDays4Weeks = arrayOfNewTestsPreviousSevenDays4Weeks.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+    console.log(`Total New Test Previous Seven Days (4 Weeks Ago) ${totalNewTestsPreviousSevenDays4Weeks}`);
     
     
     //let totalNewTestsElement = document.getElementById('totalNewTests')
@@ -355,9 +425,31 @@ arrayOfPositiveIncreasePrevious7Days.push(dailyPositiveIncrease7Days, dailyPosit
 const totalDailyPositiveIncreasePrevious7Days = arrayOfPositiveIncreasePrevious7Days.reduce(function(a, b) {
     return a + b;
 }, 0);
-console.log(`Total Daily Positive Increase Previous 7 Days ${totalDailyPositiveIncreasePrevious7Days}`);
+console.log(`Total Daily Positive Increase Previous 7 Days (1 Week Ago) ${totalDailyPositiveIncreasePrevious7Days}`);
 
-            /*RENDER POSITIVE % OVER 15 DAYS, 7 DAYS, AND PREVIOUS 7 DAYS*/
+let arrayOfPositiveIncreasePrevious7Days2Weeks = []
+arrayOfPositiveIncreasePrevious7Days2Weeks.push(dailyPositiveIncrease14Days, dailyPositiveIncrease15Days, dailyPositiveIncrease16Days, dailyPositiveIncrease17Days, dailyPositiveIncrease18Days, dailyPositiveIncrease19Days, dailyPositiveIncrease20Days)
+const totalDailyPositiveIncreasePrevious7Days2Weeks = arrayOfPositiveIncreasePrevious7Days2Weeks.reduce(function(a, b) {
+    return a + b;
+}, 0);
+console.log(`Total Daily Positive Increase Previous 7 Days (2 Weeks Ago) ${totalDailyPositiveIncreasePrevious7Days2Weeks}`);
+
+let arrayOfPositiveIncreasePrevious7Days3Weeks = []
+arrayOfPositiveIncreasePrevious7Days3Weeks.push(dailyPositiveIncrease21Days, dailyPositiveIncrease22Days, dailyPositiveIncrease23Days, dailyPositiveIncrease24Days, dailyPositiveIncrease25Days, dailyPositiveIncrease26Days, dailyPositiveIncrease27Days)
+const totalDailyPositiveIncreasePrevious7Days3Weeks = arrayOfPositiveIncreasePrevious7Days3Weeks.reduce(function(a, b) {
+    return a + b;
+}, 0);
+console.log(`Total Daily Positive Increase Previous 7 Days (3 Weeks Ago) ${totalDailyPositiveIncreasePrevious7Days3Weeks}`);
+
+let arrayOfPositiveIncreasePrevious7Days4Weeks = []
+arrayOfPositiveIncreasePrevious7Days4Weeks.push(dailyPositiveIncrease28Days, dailyPositiveIncrease29Days, dailyPositiveIncrease30Days, dailyPositiveIncrease31Days, dailyPositiveIncrease32Days, dailyPositiveIncrease33Days, dailyPositiveIncrease34Days)
+const totalDailyPositiveIncreasePrevious7Days4Weeks = arrayOfPositiveIncreasePrevious7Days4Weeks.reduce(function(a, b) {
+    return a + b;
+}, 0);
+console.log(`Total Daily Positive Increase Previous 7 Days (4 Weeks Ago) ${totalDailyPositiveIncreasePrevious7Days4Weeks}`);
+
+
+            /*RENDER POSITIVE % OVER 15 DAYS, 7 DAYS, 1 Week Ago, 2 Weeks Ago, 3 Weeks Ago, 4 Weeks Ago*/
     const percentPositiveOver15Days = (totalDailyPositiveIncrease / totalNewTests * 100).toFixed(2)
     let percentPositiveOver15DaysElement = document.getElementById('percentPositiveOver15Days')
     percentPositiveOver15DaysElement.innerHTML = `PERCENT POSITIVE RATE (last 15 days) - ${percentPositiveOver15Days}%`
@@ -368,7 +460,20 @@ console.log(`Total Daily Positive Increase Previous 7 Days ${totalDailyPositiveI
 
     const percentPositiveOverPrevious7Days = (totalDailyPositiveIncreasePrevious7Days / totalNewTestsPreviousSevenDays * 100).toFixed(2)
     let percentPositiveOverPrevious7DaysElement = document.getElementById('percentPositiveOverPrevious7Days')
-    percentPositiveOverPrevious7DaysElement.innerHTML = `PERCENT POSITIVE RATE (7 days 2 weeks ago) - ${percentPositiveOverPrevious7Days}%`
+    percentPositiveOverPrevious7DaysElement.innerHTML = `PERCENT POSITIVE RATE (7 days 1 week ago) - ${percentPositiveOverPrevious7Days}%`
+
+    const percentPositiveOverPrevious7Days2Weeks = (totalDailyPositiveIncreasePrevious7Days2Weeks / totalNewTestsPreviousSevenDays2Weeks * 100).toFixed(2)
+    let percentPositiveOverPrevious7Days2WeeksElement = document.getElementById('percentPositiveOverPrevious7Days2Weeks')
+    percentPositiveOverPrevious7Days2WeeksElement.innerHTML = `PERCENT POSITIVE RATE (7 days 2 weeks ago) - ${percentPositiveOverPrevious7Days2Weeks}%`
+
+    const percentPositiveOverPrevious7Days3Weeks = (totalDailyPositiveIncreasePrevious7Days3Weeks / totalNewTestsPreviousSevenDays3Weeks * 100).toFixed(2)
+    let percentPositiveOverPrevious7Days3WeeksElement = document.getElementById('percentPositiveOverPrevious7Days3Weeks')
+    percentPositiveOverPrevious7Days3WeeksElement.innerHTML = `PERCENT POSITIVE RATE (7 days 3 weeks ago) - ${percentPositiveOverPrevious7Days3Weeks}%`
+
+    const percentPositiveOverPrevious7Days4Weeks = (totalDailyPositiveIncreasePrevious7Days4Weeks / totalNewTestsPreviousSevenDays4Weeks * 100).toFixed(2)
+    let percentPositiveOverPrevious7Days4WeeksElement = document.getElementById('percentPositiveOverPrevious7Days4Weeks')
+    percentPositiveOverPrevious7Days4WeeksElement.innerHTML = `PERCENT POSITIVE RATE (7 days 4 weeks ago) - ${percentPositiveOverPrevious7Days4Weeks}%`
+
 
   /***************************  REMOVE ANY 0's FROM AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
   function removeZeroOnce(arrayOfPositiveIncrease7Days, value) {
@@ -394,7 +499,7 @@ console.log(removeZeroOnce(arrayOfPositiveIncrease7Days, 0))
 console.log(removeZeroAll(arrayOfPositiveIncrease7Days, 0))
 
 
-/***************************  REMOVE ANY 0's FROM AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
+/***************************  REMOVE ANY 0's FROM PREVIOUS SEVEN DAY AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
 function removeOneZero(arrayOfPositiveIncreasePrevious7Days, value) {
     var index = arrayOfPositiveIncreasePrevious7Days.indexOf(value);
     if (index > -1) {
@@ -416,10 +521,82 @@ function removeOneZero(arrayOfPositiveIncreasePrevious7Days, value) {
 
 console.log(removeOneZero(arrayOfPositiveIncreasePrevious7Days, 0))
 console.log(removeAllZero(arrayOfPositiveIncreasePrevious7Days, 0))
+
+/***************************  REMOVE ANY 0's FROM PREVIOUS SEVEN DAY AVERAGE 2 WEEKS - ANY 0's DISTORT AVERAGE ************************/  
+function removeOneZero2Weeks(arrayOfPositiveIncreasePrevious7Days2Weeks, value) {
+    var index = arrayOfPositiveIncreasePrevious7Days2Weeks.indexOf(value);
+    if (index > -1) {
+        arrayOfPositiveIncreasePrevious7Days2Weeks.splice(index, 1);
+    }
+    return arrayOfPositiveIncreasePrevious7Days2Weeks;
+}
+   function removeAllZero2Weeks(arrayOfPositiveIncreasePrevious7Days2Weeks, value) {
+    var i = 0;
+    while (i < arrayOfPositiveIncreasePrevious7Days2Weeks.length) {
+        if (arrayOfPositiveIncreasePrevious7Days2Weeks[i] === value) {
+            arrayOfPositiveIncreasePrevious7Days2Weeks.splice(i, 1);
+        } else {
+            ++i;
+        }
+    }
+    return arrayOfPositiveIncreasePrevious7Days2Weeks;
+}
+
+console.log(removeOneZero2Weeks(arrayOfPositiveIncreasePrevious7Days2Weeks, 0))
+console.log(removeAllZero2Weeks(arrayOfPositiveIncreasePrevious7Days2Weeks, 0))
+
+/***************************  REMOVE ANY 0's FROM PREVIOUS SEVEN DAY AVERAGE 3 WEEKS - ANY 0's DISTORT AVERAGE ************************/  
+function removeOneZero3Weeks(arrayOfPositiveIncreasePrevious7Days3Weeks, value) {
+    var index = arrayOfPositiveIncreasePrevious7Days3Weeks.indexOf(value);
+    if (index > -1) {
+        arrayOfPositiveIncreasePrevious7Days3Weeks.splice(index, 1);
+    }
+    return arrayOfPositiveIncreasePrevious7Days3Weeks;
+}
+   function removeAllZero3Weeks(arrayOfPositiveIncreasePrevious7Days3Weeks, value) {
+    var i = 0;
+    while (i < arrayOfPositiveIncreasePrevious7Days3Weeks.length) {
+        if (arrayOfPositiveIncreasePrevious7Days3Weeks[i] === value) {
+            arrayOfPositiveIncreasePrevious7Days3Weeks.splice(i, 1);
+        } else {
+            ++i;
+        }
+    }
+    return arrayOfPositiveIncreasePrevious7Days3Weeks;
+}
+
+console.log(removeOneZero3Weeks(arrayOfPositiveIncreasePrevious7Days3Weeks, 0))
+console.log(removeAllZero3Weeks(arrayOfPositiveIncreasePrevious7Days3Weeks, 0))
+
+/***************************  REMOVE ANY 0's FROM PREVIOUS SEVEN DAY AVERAGE 4 WEEKS - ANY 0's DISTORT AVERAGE ************************/  
+function removeOneZero4Weeks(arrayOfPositiveIncreasePrevious7Days4Weeks, value) {
+    var index = arrayOfPositiveIncreasePrevious7Days4Weeks.indexOf(value);
+    if (index > -1) {
+        arrayOfPositiveIncreasePrevious7Days4Weeks.splice(index, 1);
+    }
+    return arrayOfPositiveIncreasePrevious7Days4Weeks;
+}
+   function removeAllZero4Weeks(arrayOfPositiveIncreasePrevious7Days4Weeks, value) {
+    var i = 0;
+    while (i < arrayOfPositiveIncreasePrevious7Days4Weeks.length) {
+        if (arrayOfPositiveIncreasePrevious7Days4Weeks[i] === value) {
+            arrayOfPositiveIncreasePrevious7Days4Weeks.splice(i, 1);
+        } else {
+            ++i;
+        }
+    }
+    return arrayOfPositiveIncreasePrevious7Days4Weeks;
+}
+
+console.log(removeOneZero4Weeks(arrayOfPositiveIncreasePrevious7Days4Weeks, 0))
+console.log(removeAllZero4Weeks(arrayOfPositiveIncreasePrevious7Days4Weeks, 0))
     
    
-
+//IF Positive Increase Percent decreases 5 Consecutive Weeks, Do Something Cool
     
+if(percentPositiveOverPrevious7Days3Weeks < percentPositiveOverPrevious7Days4Weeks && percentPositiveOverPrevious7Days2Weeks < percentPositiveOverPrevious7Days3Weeks
+    && percentPositiveOverPrevious7Days < percentPositiveOverPrevious7Days2Weeks &&  percentPositiveOver7Days < percentPositiveOverPrevious7Days) 
+    document.getElementById("section4").style.backgroundColor = "seagreen";
     
     //*************RETURN rolling average over 15 days***************//
     let averageNewTestsToday = data[0].totalTestResultsIncrease
