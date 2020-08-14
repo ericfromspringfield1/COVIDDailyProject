@@ -95,6 +95,17 @@
     font-family: 'Inconsolata', monospace;
     margin-left: 10px;
   }
+
+  #greenDecrease {
+    background-color: seagreen;
+    color: whitesmoke;
+    padding: 5px;
+    width: fit-content;
+    box-shadow: 1px 1px 5px #031938;
+    font-family: 'Inconsolata', monospace;
+    border: 1pt double green;
+}
+
   
   
   
@@ -298,6 +309,41 @@
     margin-right: 10px;
     font-family: 'Inconsolata', monospace;
 }
+
+#percentPositiveOverPrevious7Days2Weeks {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days3Weeks {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days4Weeks {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+  
+
   
   
   .table {
