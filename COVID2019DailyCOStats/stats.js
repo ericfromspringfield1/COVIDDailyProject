@@ -468,7 +468,7 @@ console.log(`Total Daily Positive Increase Previous 7 Days (4 Weeks Ago) ${total
     percentPositiveOverPrevious7Days4WeeksElement.innerHTML = `PERCENT POSITIVE RATE (7 days 4 weeks ago) - ${percentPositiveOverPrevious7Days4Weeks}%`
 
 
-  /***************************  REMOVE ANY 0's FROM AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
+  /***************************  REMOVE ANY 0's or less FROM AVERAGE - ANY 0's DISTORT AVERAGE ************************/  
   function removeZeroOnce(arrayOfPositiveIncrease7Days, value) {
     var index = arrayOfPositiveIncrease7Days.indexOf(value);
     if (index > -1) {
@@ -674,6 +674,9 @@ if(percentPositiveOverPrevious7Days3Weeks < percentPositiveOverPrevious7Days4Wee
             }
             if (stateObj.positiveIncrease === 0 || stateObj.totalTestResultsIncrease === 0)
             dailyPercentPositive = 0
+
+            if (stateObj.positiveIncrease < 0 || stateObj.totalTestResults < 0)
+                dailyPercentPositive = 0
             
             if (stateObj.death === null) {
                 stateObj.death = 0
