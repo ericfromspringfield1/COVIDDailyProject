@@ -1,6 +1,6 @@
 // *********** Link each state to this site for daily stats ******************* //
 
-const dataURL = `https://covidtracking.com/api/v1/states/nc/daily.json`;
+const dataURL = `https://api.covidtracking.com/v1/states/nc/daily.json`;
 
 
 
