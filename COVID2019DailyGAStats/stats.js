@@ -41,7 +41,7 @@ if  (todayPositive > 10) {
     },
     });
 } else if 
-    (todayPositive < 10 && (todayPositive < compPositive)) {
+    (todayPositive < 10 && (todayPositive > compPositive)) {
     swal(`Less than 10% of tests came back positive as of our last update on ${data[0].lastUpdateEt}p, but...`,
     `${data[0].state} remains ${differencePositive.toFixed(2)}% above the overall positive percentage average of ${compPositive}%.`, 'warning',
    { 

@@ -84,7 +84,28 @@
       margin-top: 5px;
       font-family: 'Baloo Paaji 2', cursive;
   
-  
+  }
+
+  .statesLink {
+    background-color: white;
+    display: inline-flex;
+    width: fit-content;
+    color: #ba0c2f;
+    padding: 5px;
+    text-decoration: none;
+    box-shadow: 1px 1px 5px #031938;
+    font-family: 'Inconsolata', monospace;
+    margin-left: 10px;
+  }
+
+  #greenDecrease {
+      background-color: seagreen;
+      color: whitesmoke;
+      padding: 5px;
+      width: fit-content;
+      box-shadow: 1px 1px 5px #031938;
+      font-family: 'Inconsolata', monospace;
+      border: 1pt double green;
   }
   
   #writtenP1 {
@@ -238,6 +259,71 @@
       margin-right: 10px;
       font-family: 'Baloo Paaji 2', cursive;
   }
+
+  #section4 {
+    box-shadow: 1px 1px 5px #031938;
+    border-radius: 3%;
+    width: fit-content;
+    background-color: rgb(12, 66, 102);
+    margin-right: 10px; 
+    
+}
+
+#percentPositiveOver7Days {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days2Weeks {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days3Weeks {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+#percentPositiveOverPrevious7Days4Weeks {
+    background-color: rgba(8, 15, 48, 0.116);
+    box-shadow: 1px 1px 5px #031938;
+    color: rgb(245, 245, 245);
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
   
   
   .table {
