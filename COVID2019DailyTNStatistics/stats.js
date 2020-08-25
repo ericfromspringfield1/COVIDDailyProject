@@ -4,6 +4,7 @@ fetch(dataURL)
 })
 .then(data =>  {
     init(data)
+
     
     
     const stateWrapper = document.querySelector("table");
