@@ -751,6 +751,13 @@ function SearchState(searchTerm) {
             reload = location.reload();
         }
 
+        function showElements() {
+            var sectionContainer = document.getElementById("sectionContainer");
+            sectionContainer.style.display = "inline-flex";  // <-- Set it to inline-flex
+        }
+
+    
+
 
               
 
