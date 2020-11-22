@@ -1032,8 +1032,9 @@ function init(data) {
       percentPositiveOverPrevious7Days <
         percentPositiveOverPrevious7Days2Weeks &&
       percentPositiveOver7Days < percentPositiveOverPrevious7Days
-    )
+    ) {
       document.getElementById("section4").style.backgroundColor = "seagreen";
+    }
 
       if (
         percentPositiveOverPrevious7Days3Weeks >
@@ -1043,8 +1044,9 @@ function init(data) {
         percentPositiveOverPrevious7Days >
           percentPositiveOverPrevious7Days2Weeks &&
         percentPositiveOver7Days > percentPositiveOverPrevious7Days
-      )
+      ){
         document.getElementById("section4").style.backgroundColor = "red";
+      }
   
     //*************RETURN rolling average over 15 days***************//
     let averageNewTestsToday = data[0].totalTestResultsIncrease;
