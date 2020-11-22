@@ -1035,6 +1035,17 @@ function init(data) {
     )
       document.getElementById("section4").style.backgroundColor = "seagreen";
 
+      if (
+        percentPositiveOverPrevious7Days3Weeks >
+          percentPositiveOverPrevious7Days4Weeks &&
+        percentPositiveOverPrevious7Days2Weeks >
+          percentPositiveOverPrevious7Days3Weeks &&
+        percentPositiveOverPrevious7Days >
+          percentPositiveOverPrevious7Days2Weeks &&
+        percentPositiveOver7Days > percentPositiveOverPrevious7Days
+      )
+        document.getElementById("section4").style.backgroundColor = "red";
+  
     //*************RETURN rolling average over 15 days***************//
     let averageNewTestsToday = data[0].totalTestResultsIncrease;
     let averageNewTestsYesterday = data[1].totalTestResultsIncrease;
@@ -1226,5 +1237,5 @@ function reload() {
 function showElements() {
   var sectionContainer = document.getElementById("sectionContainer");
   sectionContainer.style.display = "inline-flex"; // <-- Set it to inline-flex
-  sectionContainer.innerHTML = "Please Wait"
+  
 }
