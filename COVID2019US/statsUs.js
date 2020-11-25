@@ -1,3 +1,5 @@
+
+
 const states = [
     {
   AZ: "Arizona",
@@ -154,6 +156,7 @@ function init(data) {
     let differencePositiveYesterday = todayPositive - yesterdayPositive;
 
     //If daily positive for "today" is greater than 10%, alert popup// POSSIBLE SWITCH
+    
     if (todayPositive > 10) {
       swal(
         `THAT RONA IS ON THE RISE IN ${data[0].state}!`,
@@ -262,13 +265,75 @@ function init(data) {
     console.log(deathIncreaseNumsToday);
     console.log(arrayOfDeathIncrease);
 
+    let dateToday = data[0].lastUpdateEt;
+    let dateYesterday = data[1].lastUpdateEt;
+    let date2Days = data[2].lastUpdateEt;
+    let date3Days = data[3].lastUpdateEt;
+    let date4Days = data[4].lastUpdateEt;
+    let date5Days = data[5].lastUpdateEt;
+    let date6Days = data[6].lastUpdateEt;
+    let date7Days = data[7].lastUpdateEt;
+    let date8Days = data[8].lastUpdateEt;
+    let date9Days = data[9].lastUpdateEt;
+    let date10Days = data[10].lastUpdateEt;
+    let date11Days = data[11].lastUpdateEt;
+    let date12Days = data[12].lastUpdateEt;
+    let date13Days = data[13].lastUpdateEt;
+    let date14Days = data[14].lastUpdateEt;
+    let dateArray = [];
+    const getDate = () => {
+    
+
+    dateArray.push(
+      dateToday,
+      dateYesterday,
+      date2Days,
+      date3Days,
+      date4Days,
+      date5Days,
+      date6Days,
+      date7Days,
+      date8Days,
+      date9Days,
+      date10Days,
+      date11Days,
+      date12Days,
+      date13Days,
+      date14Days
+    );
+    console.log(dateToday);
+    console.log(dateArray);
+
+    }
+    
+    const totalDeaths15Days = arrayOfDeathIncrease.reduce(function (a, b) {
+      return a + b;
+    }, 0);
+    
+
+    const totalDeaths15DaysElement = document.getElementById('totalDeaths15Days')
+    totalDeaths15DaysElement.innerHTML = `Total DEATHS Last 15 Days - ${totalDeaths15Days}`;
+
+
     const maxDailyDeath = arrayOfDeathIncrease.reduce(function (a, b) {
       return Math.max(a, b);
     });
     console.log(maxDailyDeath);
 
+    // Return Date of the highest daily deaths //
+    const getMaxDeathDate = () => {
+        for (i = 0; i < dateArray.length; i++) {
+          dateArray.indexOf(i)
+        }
+        if (i = arrayOfDeathIncrease.indexOf(maxDailyDeath)){
+
+        }
+         return data[i].lastUpdateEt
+      
+    }
+
     let maxDailyDeathElement = document.getElementById("maxDailyDeath");
-    maxDailyDeathElement.innerHTML = `Most DEATHS in 24-hour period (last 15 days) - ${maxDailyDeath}`;
+    maxDailyDeathElement.innerHTML = `Most DEATHS in 24-hour period (last 15 days) - ${maxDailyDeath} on ${getMaxDeathDate()}`;
 
     //****RETURN Highest Number of Daily Positive Results  Results Over 15 Days*******//
     let dailyPositiveIncreaseToday = data[0].positiveIncrease;
@@ -328,6 +393,7 @@ function init(data) {
 
     console.log(dailyPositiveIncreaseToday);
     console.log(arrayOfPositiveIncrease);
+    
 
     const maxDailyPositiveIncrease = arrayOfPositiveIncrease.reduce(function (
       a,
@@ -337,10 +403,23 @@ function init(data) {
     });
     console.log(maxDailyPositiveIncrease);
 
+    // Return Date of the highest daily positive results //
+    const getMaxPositiveIncreaseDate = () => {
+      for (i = 0; i < arrayOfPositiveIncrease.length; i++) {
+        dateArray.indexOf(i)
+      }
+      if (i = arrayOfPositiveIncrease.indexOf(maxDailyPositiveIncrease)) {
+
+      }
+       return data[i].lastUpdateEt
+    
+  }
+
+  
     let maxDailyPositiveIncreaseElement = document.getElementById(
       "maxDailyPositiveIncrease"
     );
-    maxDailyPositiveIncreaseElement.innerHTML = `Most POSITIVE CASES in 24-hour period (last 15 days) - ${maxDailyPositiveIncrease}.`;
+    maxDailyPositiveIncreaseElement.innerHTML = `Most POSITIVE CASES in 24-hour period (last 15 days) - ${maxDailyPositiveIncrease} on ${getMaxPositiveIncreaseDate()}.`;
 
     /* RETURN TOTAL DAILY POSITIVE INCREASE OVER 15 DAYS */
     const totalDailyPositiveIncrease = arrayOfPositiveIncrease.reduce(function (
@@ -409,7 +488,6 @@ function init(data) {
 
     /* ************************************************ */
 
-    /* NEED DATE FOR MAX NUMBERS */
 
     /****************************MAX DAILY PERCENT POSITIVE OVER 15 DAYS***************************************************** */
     let maxDailyPercentPositiveToday = (
@@ -492,6 +570,7 @@ function init(data) {
       maxDailyPercentPositive13Days,
       maxDailyPercentPositive14Days
     );
+    
 
     //If array contains a zero (0), it will return as NaN, creating a result of NaN when considering those items in the array.
     //For example, Max Daily Positive Percent would return NaN if any Daily Percent Positive is zero(0).
@@ -517,17 +596,36 @@ function init(data) {
 
     console.log(removeItemOnce(arrayOfDailyPercentPositive, "NaN"));
     console.log(removeItemAll(arrayOfDailyPercentPositive, "NaN"));
+    
+    
 
-    const maxDailyPercentPositive = arrayOfDailyPercentPositive.reduce(
-      function (a, b) {
-        return Math.max(a, b);
-      }
-    );
-    console.log(maxDailyPercentPositive);
-    let maxDailyPercentPositiveElement = document.getElementById(
-      "maxDailyPercentPositive"
-    );
-    maxDailyPercentPositiveElement.innerHTML = `MAX DAILY POSITIVE PERCENT (last 15 days) - ${maxDailyPercentPositive}%. `;
+    // this is array of strings, not ints. Need to convert //
+  //   const getMaxPositivePercentDate = () => {
+  //     for (i = 0; i < arrayOfDailyPercentPositive.length; i++) {
+  //       dateArray.indexOf(i)
+  //     }
+  //     if (i === arrayOfDailyPercentPositive.indexOf(maxDailyPercentPositive)) {
+
+  //     }
+  //      return data[i].lastUpdateEt
+    
+  // }
+
+  const maxDailyPercentPositive = arrayOfDailyPercentPositive.reduce(
+    function (a, b) {
+      return Math.max(a, b);
+    }
+  );
+  console.log(maxDailyPercentPositive);
+  let maxDailyPercentPositiveElement = document.getElementById(
+    "maxDailyPercentPositive"
+  );
+  maxDailyPercentPositiveElement.innerHTML = `MAX DAILY POSITIVE PERCENT (last 15 days) - ${maxDailyPercentPositive}%. `;
+
+
+   
+
+    
 
     /* MAX FOR TOTAL TESTS AND AVERAGE OF TOTAL TESTS OVER 15 DAYS*/
     let maxNewTestsToday = data[0].totalTestResultsIncrease;
@@ -646,8 +744,19 @@ function init(data) {
     });
     console.log(maxNewTests);
 
+    const getMaxNewTestsDate = () => {
+      for (i = 0; i < arrayOfNewTests.length; i++) {
+        dateArray.indexOf(i)
+      }
+      if (i = arrayOfNewTests.indexOf(maxNewTests)){
+
+      }
+       return data[i].lastUpdateEt
+    
+  }
+
     let maxNewTestsElement = document.getElementById("maxNewTests");
-    maxNewTestsElement.innerHTML = `Most NEW TESTS ADMINISTERED in one day (last 15 days) - ${maxNewTests}. `;
+    maxNewTestsElement.innerHTML = `Most NEW TESTS ADMINISTERED in one day (last 15 days) - ${maxNewTests} on ${getMaxNewTestsDate()}.`;
 
     /*RETURN TOTAL NUMBER OF NEW TESTS OVER THE LAST 15 DAYS*/
     const totalNewTests = arrayOfNewTests.reduce(function (a, b) {
