@@ -268,20 +268,20 @@ function removeItemOnce(arrayOfDailyPercentPositive, value) {
     }
     return arrayOfDailyPercentPositive;
 }
-function removeItemAll(arrayOfDailyPercentPositive, value) {
-    var i = 0;
-    while (i < arrayOfDailyPercentPositive.length) {
-        if (arrayOfDailyPercentPositive[i] === value) {
-            arrayOfDailyPercentPositive.splice(i, 1);
-        } else {
-            ++i;
+    function removeItemAll(arrayOfDailyPercentPositive, value) {
+        var i = 0;
+        while (i < arrayOfDailyPercentPositive.length) {
+            if (arrayOfDailyPercentPositive[i] === value) {
+                arrayOfDailyPercentPositive.splice(i, 1);
+            } else {
+                ++i;
+            }
         }
+        return arrayOfDailyPercentPositive;
     }
-    return arrayOfDailyPercentPositive;
-}
 
-console.log(removeItemOnce(arrayOfDailyPercentPositive, "NaN"))
-console.log(removeItemAll(arrayOfDailyPercentPositive, "NaN"))
+    console.log(removeItemOnce(arrayOfDailyPercentPositive, "NaN"))
+    console.log(removeItemAll(arrayOfDailyPercentPositive, "NaN"))
 
 const maxDailyPercentPositive = arrayOfDailyPercentPositive.reduce(function(a, b) {
     return Math.max(a, b);    
