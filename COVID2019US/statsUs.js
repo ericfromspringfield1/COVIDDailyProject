@@ -1,5 +1,3 @@
-
-
 const states = [
     {
   AZ: "Arizona",
@@ -225,7 +223,7 @@ function init(data) {
       );
     console.log(swal.getState());
 
-    /* RETURN HIGHEST NUMBER OF DAILY DEATHS OVER SEVEN DAYS  */
+    /* RETURN HIGHEST NUMBER OF DAILY DEATHS OVER 30 DAYS  */
     // To return highest over all days, try to split deathIncrease with reduce array method //
     let deathIncreaseNumsToday = data[0].deathIncrease;
     let deathIncreaseNumsYesterday = data[1].deathIncrease;
@@ -242,6 +240,21 @@ function init(data) {
     let deathIncreaseNums12Days = data[12].deathIncrease;
     let deathIncreaseNums13Days = data[13].deathIncrease;
     let deathIncreaseNums14Days = data[14].deathIncrease;
+    let deathIncreaseNums15Days = data[15].deathIncrease;
+    let deathIncreaseNums16Days = data[16].deathIncrease;
+    let deathIncreaseNums17Days = data[17].deathIncrease;
+    let deathIncreaseNums18Days = data[18].deathIncrease;
+    let deathIncreaseNums19Days = data[19].deathIncrease;
+    let deathIncreaseNums20Days = data[20].deathIncrease;
+    let deathIncreaseNums21Days = data[21].deathIncrease;
+    let deathIncreaseNums22Days = data[22].deathIncrease;
+    let deathIncreaseNums23Days = data[23].deathIncrease;
+    let deathIncreaseNums24Days = data[24].deathIncrease;
+    let deathIncreaseNums25Days = data[25].deathIncrease;
+    let deathIncreaseNums26Days = data[26].deathIncrease;
+    let deathIncreaseNums27Days = data[28].deathIncrease;
+    let deathIncreaseNums28Days = data[29].deathIncrease;
+    let deathIncreaseNums29Days = data[30].deathIncrease;
     let arrayOfDeathIncrease = [];
 
     arrayOfDeathIncrease.push(
@@ -259,7 +272,22 @@ function init(data) {
       deathIncreaseNums11Days,
       deathIncreaseNums12Days,
       deathIncreaseNums13Days,
-      deathIncreaseNums14Days
+      deathIncreaseNums14Days,
+      deathIncreaseNums15Days,
+      deathIncreaseNums16Days,
+      deathIncreaseNums17Days,
+      deathIncreaseNums18Days,
+      deathIncreaseNums19Days,
+      deathIncreaseNums20Days,
+      deathIncreaseNums21Days,
+      deathIncreaseNums22Days,
+      deathIncreaseNums23Days,
+      deathIncreaseNums24Days,
+      deathIncreaseNums25Days,
+      deathIncreaseNums26Days,
+      deathIncreaseNums27Days,
+      deathIncreaseNums28Days,
+      deathIncreaseNums29Days,
     );
 
     console.log(deathIncreaseNumsToday);
@@ -333,7 +361,7 @@ function init(data) {
     }
 
     let maxDailyDeathElement = document.getElementById("maxDailyDeath");
-    maxDailyDeathElement.innerHTML = `Most DEATHS in 24-hour period (last 15 days) - ${maxDailyDeath} on ${getMaxDeathDate()}`;
+    maxDailyDeathElement.innerHTML = `Most DEATHS in 24-hour period (last 30 days) - ${maxDailyDeath} on ${getMaxDeathDate()}`;
 
     //****RETURN Highest Number of Daily Positive Results  Results Over 15 Days*******//
     let dailyPositiveIncreaseToday = data[0].positiveIncrease;
@@ -1327,8 +1355,8 @@ function init(data) {
       const HtmlString = resultsHtmlRepresentation(stateObj);
       renderToDom(HtmlString);
     });
+    console.log(data);
   }
-  console.log(data);
 }
 
 document.getElementById("searchBtn").addEventListener("click", () => {
